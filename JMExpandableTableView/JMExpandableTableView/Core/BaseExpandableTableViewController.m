@@ -7,7 +7,6 @@
 //
 
 #import "BaseExpandableTableViewController.h"
-#import "ExpandableTableViewSectionView.h"
 
 @interface BaseExpandableTableViewController ()
 
@@ -34,19 +33,27 @@
     return NO;
 }
 
+-(id<SectionViewDelegate>)expTableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
+    return nil;
+}
+
 #pragma mark- TableView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return [[self tableView:tableView sectionViewInSection:section] view].frame.size.height;
+    return [[self internalExpTableView:tableView sectionViewInSection:section] view].frame.size.height;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    NSString *title = [self expTableView:tableView titleForHeaderInSection:section];
-    return (title.length == 0) ? nil : [[self tableView:tableView sectionViewInSection:section] view];
+    return [[self internalExpTableView:tableView sectionViewInSection:section] view];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id<SectionViewDelegate> sectionView = [self tableView:tableView sectionViewInSection:section];
-    return sectionView.isExpanded ? [self expTableView:tableView numberOfRowsInSection:section] : 0;
+    id<SectionViewDelegate> sectionView = [self internalExpTableView:tableView sectionViewInSection:section];
+    BOOL expandByDefault = [self expTableView:tableView expandSectionByDefault:section];
+    if (_isFistLoadingFinished) {
+        return sectionView.isExpanded ? [self expTableView:tableView numberOfRowsInSection:section] : 0;
+    } else {
+        return expandByDefault ? [self expTableView:tableView numberOfRowsInSection:section] : 0;
+    }
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,33 +63,19 @@
     }
 }
 
--(id<SectionViewDelegate>)tableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
+-(id<SectionViewDelegate>)internalExpTableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
     if (!_section2SectionViews) {
         _section2SectionViews = [NSMutableDictionary dictionaryWithCapacity:0];
     }
 
-    NSString *title = [self expTableView:tableView titleForHeaderInSection:section];
     NSString *key = [NSString stringWithFormat:@"%ld", (long)section];
     id<SectionViewDelegate> sectionView = [_section2SectionViews objectForKey:key];
     if (!sectionView) {
-        sectionView = [self provideYourSectionView:tableView title:title section:section];;
+        sectionView = [self expTableView:tableView sectionViewInSection:section];
         [_section2SectionViews setObject:sectionView forKey:key];
     }
 
     return sectionView;
-}
-
--(id<SectionViewDelegate>)provideYourSectionView:(UITableView *)tableView title:(NSString *)title section:(NSInteger)section {
-    CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50);
-    ExpandableTableViewSectionView *tmpView = [[ExpandableTableViewSectionView alloc] initWithFrame:frame];
-    tmpView.tableView = tableView;
-    tmpView.title = title;
-    tmpView.expandImage = [UIImage imageNamed:@"arrow_down"];
-    tmpView.collapseImage = [UIImage imageNamed:@"arrow_up"];
-    tmpView.expandByDefault = (!_isFistLoadingFinished && [self expTableView:tableView expandSectionByDefault:section]);
-    [tmpView setup];
-    
-    return tmpView;
 }
 
 @end

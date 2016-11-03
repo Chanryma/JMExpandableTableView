@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewController.h"
+#import "SectionViewDelegate.h"
 
 @interface BaseExpandableTableViewController : BaseTableViewController
 
@@ -27,12 +28,12 @@
  */
 -(BOOL)expTableView:(UITableView *)tableView expandSectionByDefault:(NSInteger)section;
 /**
- Override this method to provide section title.
+ Provide your implmentation of section view for the specific section. You should implement your section view by implmenting SectionViewDelegate.
 
  @param tableView table view
  @param section section
- @return section title
+ @return your implmentation of section view
  */
--(NSString *)expTableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
+-(id<SectionViewDelegate>)expTableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section;
 
 @end

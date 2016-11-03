@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ExpandableTableViewSectionView.h"
 
 @interface ViewController ()
 
@@ -42,18 +43,26 @@
     return _dataSource.count;
 }
 
--(NSString *)expTableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"Section->%ld", section];
-}
-
 -(BOOL)expTableView:(UITableView *)tableView expandSectionByDefault:(NSInteger)section {
-    return YES;
+    return section == 2; // expand the section 2 by default
 }
 
 -(NSInteger)expTableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_dataSource objectAtIndex:section].count;
 }
 
+-(id<SectionViewDelegate>)expTableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
+    CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50);
+    ExpandableTableViewSectionView *tmpView = [[ExpandableTableViewSectionView alloc] initWithFrame:frame];
+    tmpView.tableView = tableView;
+    tmpView.title = [NSString stringWithFormat:@"Section->%ld", section];
+    tmpView.expandImage = [UIImage imageNamed:@"arrow_down"];
+    tmpView.collapseImage = [UIImage imageNamed:@"arrow_up"];
+    tmpView.expandByDefault = [self expTableView:tableView expandSectionByDefault:section];
+    [tmpView setup];
+    
+    return tmpView;
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellId = @"cellId";
     
