@@ -7,13 +7,13 @@
 //
 
 #import "BaseExpandableTableViewController.h"
-#import "ExpandableTableViewSectionViewHolder.h"
+#import "ExpandableTableViewSectionView.h"
 
 @interface BaseExpandableTableViewController ()
 
-@property (nonatomic, strong) NSMutableDictionary<NSString *, ExpandableTableViewSectionViewHolder *> *section2SectionViews;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, id<SectionViewDelegate>> *section2SectionViews;
 /**
- 第一次加载是否已完成。用于控制部分section默认展开。
+ Check if first loading is finished.
  */
 @property (nonatomic, assign) BOOL isFistLoadingFinished;
 
@@ -36,28 +36,17 @@
 
 #pragma mark- TableView
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    ExpandableTableViewSectionViewHolder *holder = [self tableView:tableView sectionViewHolderInSection:section];
-    return (holder.title.length == 0) ? 0 : holder.view.frame.size.height;
+    return [[self tableView:tableView sectionViewInSection:section] view].frame.size.height;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     NSString *title = [self expTableView:tableView titleForHeaderInSection:section];
-    if (title.length == 0) {
-        return nil;
-    }
-    
-    ExpandableTableViewSectionViewHolder *holder = [self tableView:tableView sectionViewHolderInSection:section];
-    return holder.view;
+    return (title.length == 0) ? nil : [[self tableView:tableView sectionViewInSection:section] view];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    ExpandableTableViewSectionViewHolder *holder = [self tableView:tableView sectionViewHolderInSection:section];
-    UIView *sectionView = [self tableView:tableView viewForHeaderInSection:section];
-    if (!sectionView || holder.isExpanded) {
-        return [self expTableView:tableView numberOfRowsInSection:section];
-    } else {
-        return 0;
-    }
+    id<SectionViewDelegate> sectionView = [self tableView:tableView sectionViewInSection:section];
+    return sectionView.isExpanded ? [self expTableView:tableView numberOfRowsInSection:section] : 0;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,25 +56,33 @@
     }
 }
 
--(ExpandableTableViewSectionViewHolder *)tableView:(UITableView *)tableView sectionViewHolderInSection:(NSInteger)section {
+-(id<SectionViewDelegate>)tableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
     if (!_section2SectionViews) {
         _section2SectionViews = [NSMutableDictionary dictionaryWithCapacity:0];
     }
-    
-    BOOL expandByDefault = [self expTableView:tableView expandSectionByDefault:section];
-    expandByDefault = (!_isFistLoadingFinished && expandByDefault);
+
     NSString *title = [self expTableView:tableView titleForHeaderInSection:section];
     NSString *key = [NSString stringWithFormat:@"%ld", (long)section];
-    ExpandableTableViewSectionViewHolder *holder = [_section2SectionViews objectForKey:key];
-    if (!holder) {
-        holder = [ExpandableTableViewSectionViewHolder instanceWithTableView:tableView title:title expand:expandByDefault];
-        [_section2SectionViews setObject:holder forKey:key];
-    } else {
-        holder.title = title;
+    id<SectionViewDelegate> sectionView = [_section2SectionViews objectForKey:key];
+    if (!sectionView) {
+        sectionView = [self provideYourSectionView:tableView title:title section:section];;
+        [_section2SectionViews setObject:sectionView forKey:key];
     }
 
-    return holder;
+    return sectionView;
 }
 
+-(id<SectionViewDelegate>)provideYourSectionView:(UITableView *)tableView title:(NSString *)title section:(NSInteger)section {
+    CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50);
+    ExpandableTableViewSectionView *tmpView = [[ExpandableTableViewSectionView alloc] initWithFrame:frame];
+    tmpView.tableView = tableView;
+    tmpView.title = title;
+    tmpView.expandImage = [UIImage imageNamed:@"arrow_down"];
+    tmpView.collapseImage = [UIImage imageNamed:@"arrow_up"];
+    tmpView.expandByDefault = (!_isFistLoadingFinished && [self expTableView:tableView expandSectionByDefault:section]);
+    [tmpView setup];
+    
+    return tmpView;
+}
 
 @end

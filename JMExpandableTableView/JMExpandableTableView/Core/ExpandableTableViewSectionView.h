@@ -6,16 +6,19 @@
 //  Copyright © 2016 jonathan ma. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SectionViewDelegate.h"
 
-@interface ExpandableTableViewSectionView : UIView
+/**
+ Default section view implementation. You can 
+ */
+@interface ExpandableTableViewSectionView : UIView <SectionViewDelegate>
 
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) BOOL expandByDefault;
 @property (nonatomic, strong) UIImage *expandImage;
 @property (nonatomic, strong) UIImage *collapseImage;
 
 -(void)setup;
--(void)expand:(BOOL)expand;
 
 @end

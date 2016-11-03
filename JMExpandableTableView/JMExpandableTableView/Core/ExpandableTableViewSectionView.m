@@ -27,38 +27,52 @@ static const CGFloat HEADER_FONT_SIZE = 18;
         return;
     }
 
+    _isExpanded = _expandByDefault;
     [self setupImageView];
+    [self setupTextView];
+    [self setToggleListener];
+    _isSetup = YES;
+}
 
+-(void)setupImageView {
+    UIImage *image = _expandByDefault ? _expandImage : _collapseImage;
+    _imgView = [[UIImageView alloc] initWithImage:image];
+    CGSize size = _imgView.frame.size;
+    CGPoint origin = _imgView.frame.origin;
+    CGFloat originY = (HEADER_HEIGHT - size.height) / 2;
+    _imgView.frame = CGRectMake(origin.x, originY, size.width, size.height);
+    [self addSubview:_imgView];
+}
+
+-(void)setupTextView {
     CGFloat titleWidth = [UIScreen mainScreen].bounds.size.width - _imgView.frame.size.width;
     CGRect titleFrame = CGRectMake(_imgView.frame.size.width, 0, titleWidth, HEADER_HEIGHT);
     _tvTitle = [[UITextView alloc] initWithFrame:titleFrame];
     _tvTitle.text = _title;
     _tvTitle.editable = NO;
     _tvTitle.font = [UIFont boldSystemFontOfSize:HEADER_FONT_SIZE];
-    _isExpanded = _expandByDefault;
     [self addSubview:_tvTitle];
-    _isSetup = YES;
 }
 
--(void)expand:(BOOL)expand {
-    if (expand == _isExpanded) {
-        return;
-    }
-
-    _isExpanded = expand;
-    _imgView.image = expand ? _expandImage : _collapseImage;
+-(void)setToggleListener {
+    UITapGestureRecognizer *listener = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggle)];
+    listener.numberOfTapsRequired = 1;
+    [self addGestureRecognizer:listener];
 }
 
--(void)setupImageView {
-    UIImage *image = _expandByDefault ? _expandImage : _collapseImage;
-    _imgView = [[UIImageView alloc] initWithImage:image];
+-(void)toggle {
+    _isExpanded = !_isExpanded;
+    _imgView.image = _isExpanded ? _expandImage : _collapseImage;
+    [_tableView reloadData];
+}
 
-    CGSize size = _imgView.frame.size;
-    CGPoint origin = _imgView.frame.origin;
-    CGFloat originY = (HEADER_HEIGHT - size.height) / 2;
-    _imgView.frame = CGRectMake(origin.x, originY, size.width, size.height);
+#pragma mark- SectionViewDelegate
+-(BOOL)isExpanded {
+    return _isExpanded;
+}
 
-    [self addSubview:_imgView];
+-(UIView *)view {
+    return self;
 }
 
 @end

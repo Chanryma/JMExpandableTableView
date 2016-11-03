@@ -26,6 +26,13 @@
  @return YES if a section should be expadned by default.
  */
 -(BOOL)expTableView:(UITableView *)tableView expandSectionByDefault:(NSInteger)section;
+/**
+ Override this method to provide section title.
+
+ @param tableView table view
+ @param section section
+ @return section title
+ */
 -(NSString *)expTableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
 
 @end
