@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A77D75081DCADCB4006CF794 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75071DCADCB4006CF794 /* main.m */; };
+		A77D750B1DCADCB4006CF794 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D750A1DCADCB4006CF794 /* AppDelegate.m */; };
+		A77D75111DCADCB4006CF794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77D750F1DCADCB4006CF794 /* Main.storyboard */; };
+		A77D75131DCADCB4006CF794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A77D75121DCADCB4006CF794 /* Assets.xcassets */; };
+		A77D75161DCADCB4006CF794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77D75141DCADCB4006CF794 /* LaunchScreen.storyboard */; };
+		A77D75281DCADD9A006CF794 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75261DCADD9A006CF794 /* ViewController.m */; };
+		A77D75331DCAE4CF006CF794 /* BaseExpandableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */; };
+		A77D75341DCAE4CF006CF794 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */; };
+		A77D75351DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75321DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.m */; };
+		A77D75381DCAE5C6006CF794 /* ExpandableTableViewSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A77D75031DCADCB4006CF794 /* JMExpandableTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMExpandableTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77D75071DCADCB4006CF794 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A77D75091DCADCB4006CF794 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A77D750A1DCADCB4006CF794 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A77D75101DCADCB4006CF794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A77D75121DCADCB4006CF794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A77D75151DCADCB4006CF794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A77D75171DCADCB4006CF794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A77D75251DCADD9A006CF794 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A77D75261DCADD9A006CF794 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A77D752D1DCAE4CF006CF794 /* BaseExpandableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseExpandableTableViewController.h; sourceTree = "<group>"; };
+		A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseExpandableTableViewController.m; sourceTree = "<group>"; };
+		A77D752F1DCAE4CF006CF794 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		A77D75311DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableTableViewSectionViewHolder.h; sourceTree = "<group>"; };
+		A77D75321DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableTableViewSectionViewHolder.m; sourceTree = "<group>"; };
+		A77D75361DCAE5C6006CF794 /* ExpandableTableViewSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableTableViewSectionView.h; sourceTree = "<group>"; };
+		A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableTableViewSectionView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A77D75001DCADCB4006CF794 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A77D74FA1DCADCB4006CF794 = {
+			isa = PBXGroup;
+			children = (
+				A77D75051DCADCB4006CF794 /* JMExpandableTableView */,
+				A77D75041DCADCB4006CF794 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A77D75041DCADCB4006CF794 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A77D75031DCADCB4006CF794 /* JMExpandableTableView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A77D75051DCADCB4006CF794 /* JMExpandableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A77D752C1DCAE4CF006CF794 /* Core */,
+				A77D75221DCADD9A006CF794 /* Controller */,
+				A77D75091DCADCB4006CF794 /* AppDelegate.h */,
+				A77D750A1DCADCB4006CF794 /* AppDelegate.m */,
+				A77D750F1DCADCB4006CF794 /* Main.storyboard */,
+				A77D75121DCADCB4006CF794 /* Assets.xcassets */,
+				A77D75141DCADCB4006CF794 /* LaunchScreen.storyboard */,
+				A77D75171DCADCB4006CF794 /* Info.plist */,
+				A77D75061DCADCB4006CF794 /* Supporting Files */,
+			);
+			path = JMExpandableTableView;
+			sourceTree = "<group>";
+		};
+		A77D75061DCADCB4006CF794 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A77D75071DCADCB4006CF794 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A77D75221DCADD9A006CF794 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A77D75251DCADD9A006CF794 /* ViewController.h */,
+				A77D75261DCADD9A006CF794 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A77D752C1DCAE4CF006CF794 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A77D752D1DCAE4CF006CF794 /* BaseExpandableTableViewController.h */,
+				A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */,
+				A77D752F1DCAE4CF006CF794 /* BaseTableViewController.h */,
+				A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */,
+				A77D75311DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.h */,
+				A77D75321DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.m */,
+				A77D75361DCAE5C6006CF794 /* ExpandableTableViewSectionView.h */,
+				A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A77D75021DCADCB4006CF794 /* JMExpandableTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A77D751A1DCADCB4006CF794 /* Build configuration list for PBXNativeTarget "JMExpandableTableView" */;
+			buildPhases = (
+				A77D74FF1DCADCB4006CF794 /* Sources */,
+				A77D75001DCADCB4006CF794 /* Frameworks */,
+				A77D75011DCADCB4006CF794 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMExpandableTableView;
+			productName = JMExpandableTableView;
+			productReference = A77D75031DCADCB4006CF794 /* JMExpandableTableView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A77D74FB1DCADCB4006CF794 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "jonathan ma";
+				TargetAttributes = {
+					A77D75021DCADCB4006CF794 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = ZA734EWL3T;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = A77D74FE1DCADCB4006CF794 /* Build configuration list for PBXProject "JMExpandableTableView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A77D74FA1DCADCB4006CF794;
+			productRefGroup = A77D75041DCADCB4006CF794 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A77D75021DCADCB4006CF794 /* JMExpandableTableView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A77D75011DCADCB4006CF794 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A77D75161DCADCB4006CF794 /* LaunchScreen.storyboard in Resources */,
+				A77D75131DCADCB4006CF794 /* Assets.xcassets in Resources */,
+				A77D75111DCADCB4006CF794 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A77D74FF1DCADCB4006CF794 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A77D75381DCAE5C6006CF794 /* ExpandableTableViewSectionView.m in Sources */,
+				A77D75331DCAE4CF006CF794 /* BaseExpandableTableViewController.m in Sources */,
+				A77D750B1DCADCB4006CF794 /* AppDelegate.m in Sources */,
+				A77D75281DCADD9A006CF794 /* ViewController.m in Sources */,
+				A77D75081DCADCB4006CF794 /* main.m in Sources */,
+				A77D75351DCAE4CF006CF794 /* ExpandableTableViewSectionViewHolder.m in Sources */,
+				A77D75341DCAE4CF006CF794 /* BaseTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A77D750F1DCADCB4006CF794 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A77D75101DCADCB4006CF794 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A77D75141DCADCB4006CF794 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A77D75151DCADCB4006CF794 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A77D75181DCADCB4006CF794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: jonathan ma (W549T67SY3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jonathan ma (W549T67SY3)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A77D75191DCADCB4006CF794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A77D751B1DCADCB4006CF794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZA734EWL3T;
+				INFOPLIST_FILE = JMExpandableTableView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecity.demo.explistview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8447b069-c31f-459d-af13-187d74bd4313";
+				PROVISIONING_PROFILE_SPECIFIER = EcityDemoWildCard;
+			};
+			name = Debug;
+		};
+		A77D751C1DCADCB4006CF794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZA734EWL3T;
+				INFOPLIST_FILE = JMExpandableTableView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ecity.demo.explistview;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8447b069-c31f-459d-af13-187d74bd4313";
+				PROVISIONING_PROFILE_SPECIFIER = EcityDemoWildCard;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A77D74FE1DCADCB4006CF794 /* Build configuration list for PBXProject "JMExpandableTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A77D75181DCADCB4006CF794 /* Debug */,
+				A77D75191DCADCB4006CF794 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A77D751A1DCADCB4006CF794 /* Build configuration list for PBXNativeTarget "JMExpandableTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A77D751B1DCADCB4006CF794 /* Debug */,
+				A77D751C1DCADCB4006CF794 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A77D74FB1DCADCB4006CF794 /* Project object */;
+}
