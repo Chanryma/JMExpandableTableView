@@ -1,16 +1,16 @@
 //
-//  ExpandableTableViewSectionView.m
+//  DefaultTableViewSectionView.m
 //  JMExpandableTableView
 //
 //  Created by jonathan ma on 3/11/2016.
 //  Copyright © 2016 jonathan ma. All rights reserved.
 //
 
-#import "ExpandableTableViewSectionView.h"
+#import "DefaultTableViewSectionView.h"
 
 static const CGFloat HEADER_FONT_SIZE = 18;
 
-@interface ExpandableTableViewSectionView ()
+@interface DefaultTableViewSectionView ()
 
 @property (nonatomic, assign) BOOL isSetup;
 @property (nonatomic, assign) BOOL isExpanded;
@@ -19,7 +19,7 @@ static const CGFloat HEADER_FONT_SIZE = 18;
 
 @end
 
-@implementation ExpandableTableViewSectionView
+@implementation DefaultTableViewSectionView
 
 -(void)setup {
     if (_isSetup) {

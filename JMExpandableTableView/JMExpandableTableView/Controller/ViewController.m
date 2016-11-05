@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ExpandableTableViewSectionView.h"
+#import "DefaultTableViewSectionView.h"
 
 @interface ViewController ()
 
@@ -53,7 +53,7 @@
 
 -(id<SectionViewDelegate>)expTableView:(UITableView *)tableView sectionViewInSection:(NSInteger)section {
     CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 50);
-    ExpandableTableViewSectionView *tmpView = [[ExpandableTableViewSectionView alloc] initWithFrame:frame];
+    DefaultTableViewSectionView *tmpView = [[DefaultTableViewSectionView alloc] initWithFrame:frame];
     tmpView.tableView = tableView;
     tmpView.title = [NSString stringWithFormat:@"Section->%ld", section];
     tmpView.expandImage = [UIImage imageNamed:@"arrow_down"];

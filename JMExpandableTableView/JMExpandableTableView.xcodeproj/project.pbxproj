@@ -15,7 +15,7 @@
 		A77D75281DCADD9A006CF794 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75261DCADD9A006CF794 /* ViewController.m */; };
 		A77D75331DCAE4CF006CF794 /* BaseExpandableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */; };
 		A77D75341DCAE4CF006CF794 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */; };
-		A77D75381DCAE5C6006CF794 /* ExpandableTableViewSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */; };
+		A77D75381DCAE5C6006CF794 /* DefaultTableViewSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77D75371DCAE5C6006CF794 /* DefaultTableViewSectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 		A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseExpandableTableViewController.m; sourceTree = "<group>"; };
 		A77D752F1DCAE4CF006CF794 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
 		A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
-		A77D75361DCAE5C6006CF794 /* ExpandableTableViewSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableTableViewSectionView.h; sourceTree = "<group>"; };
-		A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandableTableViewSectionView.m; sourceTree = "<group>"; };
+		A77D75361DCAE5C6006CF794 /* DefaultTableViewSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultTableViewSectionView.h; sourceTree = "<group>"; };
+		A77D75371DCAE5C6006CF794 /* DefaultTableViewSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultTableViewSectionView.m; sourceTree = "<group>"; };
 		A7CEEFB21DCB8F7300C68275 /* SectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,8 +105,8 @@
 				A77D752E1DCAE4CF006CF794 /* BaseExpandableTableViewController.m */,
 				A77D752F1DCAE4CF006CF794 /* BaseTableViewController.h */,
 				A77D75301DCAE4CF006CF794 /* BaseTableViewController.m */,
-				A77D75361DCAE5C6006CF794 /* ExpandableTableViewSectionView.h */,
-				A77D75371DCAE5C6006CF794 /* ExpandableTableViewSectionView.m */,
+				A77D75361DCAE5C6006CF794 /* DefaultTableViewSectionView.h */,
+				A77D75371DCAE5C6006CF794 /* DefaultTableViewSectionView.m */,
 				A7CEEFB21DCB8F7300C68275 /* SectionViewDelegate.h */,
 			);
 			path = Core;
@@ -184,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A77D75381DCAE5C6006CF794 /* ExpandableTableViewSectionView.m in Sources */,
+				A77D75381DCAE5C6006CF794 /* DefaultTableViewSectionView.m in Sources */,
 				A77D75331DCAE4CF006CF794 /* BaseExpandableTableViewController.m in Sources */,
 				A77D750B1DCADCB4006CF794 /* AppDelegate.m in Sources */,
 				A77D75281DCADD9A006CF794 /* ViewController.m in Sources */,
