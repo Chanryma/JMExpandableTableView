@@ -7,6 +7,7 @@ A simple-to-integrate expandable table view, for iOS.
 
 1. Copy the ```Core``` folder into your project.
 2. Provide your own section view by implementing ```SectionViewDelegate```.
+![image](diagram.png)
 3. Make your controller inherit ```BaseExpandableTableViewController``` and override following 5 methods.
 
 ```
