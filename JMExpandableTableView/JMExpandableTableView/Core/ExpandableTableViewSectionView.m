@@ -8,7 +8,6 @@
 
 #import "ExpandableTableViewSectionView.h"
 
-static const CGFloat HEADER_HEIGHT = 50;
 static const CGFloat HEADER_FONT_SIZE = 18;
 
 @interface ExpandableTableViewSectionView ()
@@ -16,7 +15,7 @@ static const CGFloat HEADER_FONT_SIZE = 18;
 @property (nonatomic, assign) BOOL isSetup;
 @property (nonatomic, assign) BOOL isExpanded;
 @property (nonatomic, strong) UIImageView *imgView;
-@property (nonatomic, strong) UITextView *tvTitle;
+@property (nonatomic, strong) UILabel *lblTitle;
 
 @end
 
@@ -29,7 +28,7 @@ static const CGFloat HEADER_FONT_SIZE = 18;
 
     _isExpanded = _expandByDefault;
     [self setupImageView];
-    [self setupTextView];
+    [self setupTitleView];
     [self setToggleListener];
     _isSetup = YES;
 }
@@ -38,20 +37,20 @@ static const CGFloat HEADER_FONT_SIZE = 18;
     UIImage *image = _expandByDefault ? _expandImage : _collapseImage;
     _imgView = [[UIImageView alloc] initWithImage:image];
     CGSize size = _imgView.frame.size;
-    CGPoint origin = _imgView.frame.origin;
-    CGFloat originY = (HEADER_HEIGHT - size.height) / 2;
-    _imgView.frame = CGRectMake(origin.x, originY, size.width, size.height);
+    CGFloat originY = (self.frame.size.height - size.height) / 2;
+    _imgView.frame = CGRectMake(5, originY, size.width, size.height);
     [self addSubview:_imgView];
 }
 
--(void)setupTextView {
+-(void)setupTitleView {
     CGFloat titleWidth = [UIScreen mainScreen].bounds.size.width - _imgView.frame.size.width;
-    CGRect titleFrame = CGRectMake(_imgView.frame.size.width, 0, titleWidth, HEADER_HEIGHT);
-    _tvTitle = [[UITextView alloc] initWithFrame:titleFrame];
-    _tvTitle.text = _title;
-    _tvTitle.editable = NO;
-    _tvTitle.font = [UIFont boldSystemFontOfSize:HEADER_FONT_SIZE];
-    [self addSubview:_tvTitle];
+    CGFloat leftPadding = 5;
+    CGFloat originX = _imgView.frame.origin.x + _imgView.frame.size.width + leftPadding;
+    CGRect titleFrame = CGRectMake(originX, 0, titleWidth, self.frame.size.height);
+    _lblTitle = [[UILabel alloc] initWithFrame:titleFrame];
+    _lblTitle.text = _title;
+    _lblTitle.font = [UIFont boldSystemFontOfSize:HEADER_FONT_SIZE];
+    [self addSubview:_lblTitle];
 }
 
 -(void)setToggleListener {
