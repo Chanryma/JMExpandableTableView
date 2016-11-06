@@ -11,7 +11,7 @@
 /**
  Default section view implementation. You can 
  */
-@interface ExpandableTableViewSectionView : UIView <SectionViewDelegate>
+@interface DefaultTableViewSectionView : UIView <SectionViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *title;
